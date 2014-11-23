@@ -15,12 +15,14 @@
     {
       urlMap = 
       {
-        1:"Main.html",
-        2:"http://note.youdao.com/share/?id=7265f2ff26c051435f8bd13b6ada9bcb&type=note",
-        3:"http://note.youdao.com/share/?id=345c6204f8a64a57284684e1d278f534&type=note",
-        4:"http://note.youdao.com/share/?id=2681e71df7ed6c071a5feec66b511490&type=note",
-        5:"http://note.youdao.com/share/?id=8a9ea6de6d2ac4dc801862187eeae66a&type=note",
-        6:"Projects.html"
+        "IndexHTML":"http://note.youdao.com/share/?id=879715d41ead0bec7a40e11be6116c50&type=note",
+        "Software":"http://note.youdao.com/share/?id=7265f2ff26c051435f8bd13b6ada9bcb&type=note",
+        "Programing":"http://note.youdao.com/share/?id=345c6204f8a64a57284684e1d278f534&type=note",
+        "SDK":"http://note.youdao.com/share/?id=2681e71df7ed6c071a5feec66b511490&type=note",
+        "Document":"http://note.youdao.com/share/?id=8a9ea6de6d2ac4dc801862187eeae66a&type=note",
+        "TeamBlog":"http://note.youdao.com/share/?id=93f7dc32f817d8c9d794affcd1d2457b&type=note",
+        "Github":"http://note.youdao.com/share/?id=a0f3bcb76c276ddf3fa60ab98c5a85bd&type=note",
+        99:"Projects.html"
       };
     }
     function changeIFrame(select)
@@ -52,15 +54,17 @@
  </div>
  <br/>
  <div class="btn-group" role="group" aria-label="...">
-  <button type="button" class="btn btn-info" onclick=changeIFrame(1)>首页</button>
-  <button type="button" class="btn btn-warning" onclick=changeIFrame(2)>软件下载</button>
-  <button type="button" class="btn btn-warning" onclick=changeIFrame(3)>编程工具下载</button>
-  <button type="button" class="btn btn-warning" onclick=changeIFrame(4)>开发包SDK下载</button>
-  <button type="button" class="btn btn-warning" onclick=changeIFrame(5)>在线文档</button>
-  <button type="button" class="btn btn-info" onclick=changeIFrame(6)>我的项目</button>
+  <button type="button" class="btn btn-info" onclick=changeIFrame("IndexHTML")>首页</button>
+  <button type="button" class="btn btn-warning" onclick=changeIFrame("Github")>Github项目</button>
+  <button type="button" class="btn btn-warning" onclick=changeIFrame("Software")>软件下载</button>
+  <button type="button" class="btn btn-warning" onclick=changeIFrame("Programing")>编程下载</button>
+  <button type="button" class="btn btn-warning" onclick=changeIFrame("SDK")>SDK下载</button>
+  <button type="button" class="btn btn-warning" onclick=changeIFrame("Document")>在线文档</button>
+  <button type="button" class="btn btn-warning" onclick=changeIFrame("TeamBlog")>团队博客</button>
+  <button type="button" class="btn btn-info" onclick=changeIFrame(99)>我的项目</button>
 </div>
 </div>
-<iframe src="Main.html" id="main" width="100%" height="10000" frameborder="0" scrolling="no"></iframe>
+<iframe src="http://note.youdao.com/share/?id=879715d41ead0bec7a40e11be6116c50&type=note" id="main" width="100%" height="10000" frameborder="0" scrolling="no"></iframe>
 <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
 <script src="https://code.jquery.com/jquery.js"></script>
 <!-- 包括所有已编译的插件 -->
