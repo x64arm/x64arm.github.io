@@ -12,9 +12,10 @@
   <link rel="icon" href="favicon.ico">
   <script type="text/javascript">
     var urlMap;
-    var isFirst = false;
+    var x;
     function initURL()
     {
+      x=document.getElementById('main');
       urlMap = 
       {
         "IndexHTML":"http://note.youdao.com/share/?id=6b5075ddb142d4b63ae9dc24da20f795&type=notebook",
@@ -29,17 +30,12 @@
         "News2014":"http://note.youdao.com/share/?id=44ed393c956c35695ff3a23d1beda661&type=notebook",
         99:"Projects.html"
       };
-      if(!isFirst)
-      {
-        isFirst = true;
-        changeIFrame("IndexHTML");
-      }
+      
+      changeIFrame("IndexHTML");
     }
     function changeIFrame(select)
     {
-      var url = urlMap[select];
-      var x=document.getElementById('main');
-      x.src = url;
+      x.src = urlMap[select];
     }
   </script>
 </head>
