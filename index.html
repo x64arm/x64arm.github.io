@@ -13,9 +13,15 @@
 	<script type="text/javascript">
 		var urlMap;
 		var x;
+		window.onload = function()
+		{
+			initURL();
+		}
+
 		function initURL()
 		{
 			x=document.getElementById('main');
+
 			urlMap = 
 			{
 				"IndexHTML":"http://note.youdao.com/share/?id=6b5075ddb142d4b63ae9dc24da20f795&type=notebook",
@@ -31,18 +37,27 @@
 				"TeamBlog":"http://note.youdao.com/share/?id=93f7dc32f817d8c9d794affcd1d2457b&type=note",
 				"Github":"http://note.youdao.com/share/?id=a0f3bcb76c276ddf3fa60ab98c5a85bd&type=note",
 				"News2014":"http://note.youdao.com/share/?id=44ed393c956c35695ff3a23d1beda661&type=notebook",
-				99:"Projects.html"
+				"MyProject":"Projects.html"
 			};
+
+			var btn = document.getElementsByTagName("button");
+			addClick(btn);
 
 			changeIFrame("IndexHTML");
 		}
-		function changeIFrame(select)
+		function addClick(arg)
 		{
-			x.src = urlMap[select];
+			for (var i = 0; i < arg.length; i++) {
+				arg[i].onclick = changeIFrame();
+			};
+		}
+		function changeIFrame()
+		{
+			x.src = urlMap[this.id];
 		}
 	</script>
 </head>
-<body onload=initURL()>
+<body>
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-8">
@@ -78,23 +93,28 @@
 		</div>
 		<br/>
 		<div class="btn-group" role="group" aria-label="...">
-			<button type="button" class="btn btn-info" onclick=changeIFrame("IndexHTML")>首页</button>
-			<button type="button" class="btn btn-danger" onclick=changeIFrame("MyNote")>我的笔记</button>
-			<button type="button" class="btn btn-warning" onclick=changeIFrame("Github")>Github项目</button>
-			<button type="button" class="btn btn-warning" onclick=changeIFrame("Software")>软件下载</button>
-			<button type="button" class="btn btn-warning" onclick=changeIFrame("Programing")>编程下载</button>
-			<button type="button" class="btn btn-warning" onclick=changeIFrame("SDK")>SDK下载</button>
-			<button type="button" class="btn btn-warning" onclick=changeIFrame("Document")>在线文档</button>
-			<button type="button" class="btn btn-warning" onclick=changeIFrame("Demo")>Demo集合</button>
-			<button type="button" class="btn btn-danger" onclick=changeIFrame("Fuli")>福利社</button>
-			<button type="button" class="btn btn-success" onclick=changeIFrame("Science")>科学区</button>
-			<button type="button" class="btn btn-danger" onclick=changeIFrame("Yuntian")>云天影视</button>
-			<button type="button" class="btn btn-warning" onclick=changeIFrame("TeamBlog")>团队博客</button>
-			<button type="button" class="btn btn-warning" onclick=changeIFrame("News2014")>2014新闻</button>
-			<button type="button" class="btn btn-info" onclick=changeIFrame(99)>我的项目</button>
+			<button type="button" class="btn btn-info" id="IndexHTML">首页</button>
+			<button type="button" class="btn btn-danger" id="MyNote">我的笔记</button>
+			<button type="button" class="btn btn-warning" id="Github">Github项目</button>
+			<button type="button" class="btn btn-warning" id="Software">软件下载</button>
+			<button type="button" class="btn btn-warning" id="Programing">编程下载</button>
+			<button type="button" class="btn btn-warning" id="SDK">SDK下载</button>
+			<button type="button" class="btn btn-warning" id="Document">在线文档</button>
+			<button type="button" class="btn btn-warning" id="Demo">Demo集合</button>
+			<button type="button" class="btn btn-danger" id="Fuli">福利社</button>
+			<button type="button" class="btn btn-success" id="Science">科学区</button>
+			<button type="button" class="btn btn-danger" id="Yuntian">云天影视</button>
+			<button type="button" class="btn btn-warning" id="TeamBlog">团队博客</button>
+			<button type="button" class="btn btn-warning" id="News2014">2014新闻</button>
+			<button type="button" class="btn btn-info" id="MyProject">我的项目</button>
 		</div>
 	</div>
-	<iframe id="main" width="100%" height="100000" frameborder="0" scrolling="no"></iframe>
+	<div align="center" style="margin:0 auto;overflow:hidden">
+		<div style="width:100%;height:10000px;margin:-110px;">
+			<iframe id="main" width="100%" height="100000" frameborder="0" scrolling="no"></iframe>
+		</div>
+	</div>
+	
 	<!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<!-- 包括所有已编译的插件 -->
