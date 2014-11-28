@@ -43,12 +43,12 @@
 			var btn = document.getElementsByTagName("button");
 			addClick(btn);
 
-			changeIFrame("IndexHTML");
+			x.src = urlMap[btn[0].id];
 		}
 		function addClick(arg)
 		{
 			for (var i = 0; i < arg.length; i++) {
-				arg[i].onclick = changeIFrame();
+				arg[i].onclick = changeIFrame;
 			};
 		}
 		function changeIFrame()
