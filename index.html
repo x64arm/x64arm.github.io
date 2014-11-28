@@ -11,6 +11,10 @@
 	<link href="css/justified-nav.css" rel="stylesheet">
 	<link rel="icon" href="favicon.ico">
 	<script type="text/javascript">
+		$(function() {
+			$( document ).tooltip();
+		});
+
 		var urlMap;
 		var x;
 		window.onload = function()
@@ -94,18 +98,18 @@
 		<br/>
 		<div class="btn-group" role="group" aria-label="...">
 			<button type="button" class="btn btn-info" id="IndexHTML">首页</button>
-			<button type="button" class="btn btn-danger" id="MyNote">我的笔记</button>
+			<button type="button" class="btn btn-danger" id="MyNote" title="这都是我的真知灼见">我的笔记</button>
 			<button type="button" class="btn btn-warning" id="Github">Github项目</button>
 			<button type="button" class="btn btn-warning" id="Software">软件下载</button>
 			<button type="button" class="btn btn-warning" id="Programing">编程下载</button>
 			<button type="button" class="btn btn-warning" id="SDK">SDK下载</button>
 			<button type="button" class="btn btn-warning" id="Document">在线文档</button>
 			<button type="button" class="btn btn-warning" id="Demo">Demo集合</button>
-			<button type="button" class="btn btn-danger" id="Fuli">福利社</button>
+			<button type="button" class="btn btn-danger" id="Fuli" title="由福利社达人倾情奉献">福利社</button>
 			<button type="button" class="btn btn-success" id="Science">科学区</button>
-			<button type="button" class="btn btn-danger" id="Yuntian">云天影视</button>
+			<button type="button" class="btn btn-danger" id="Yuntian" title="由影视达人慷慨解囊">云天影视</button>
 			<button type="button" class="btn btn-warning" id="TeamBlog">团队博客</button>
-			<button type="button" class="btn btn-warning" id="News2014">2014新闻</button>
+			<button type="button" class="btn btn-warning" id="News2014" title="内容较多，打开会有点小慢">2014新闻</button>
 			<button type="button" class="btn btn-info" id="MyProject">我的项目</button>
 		</div>
 	</div>
