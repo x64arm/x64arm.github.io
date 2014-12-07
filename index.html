@@ -12,6 +12,8 @@
 	<link rel="icon" href="favicon.ico">
 	<!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
 	<script src="https://code.jquery.com/jquery.js"></script>
+	<!-- 包括所有已编译的插件 -->
+	<script src="bootstrap/js/bootstrap.js"></script>
 	<script type="text/javascript">
 		$(function() {
 			$( document ).tooltip();
@@ -50,7 +52,9 @@
 			var btn = document.getElementsByTagName("button");
 			addClick(btn);
 
-			x.src = urlMap[btn[0].id];
+			var url = urlMap[btn[0].id];
+			if(url!=undefined)
+				x.src = url;
 		}
 		function addClick(arg)
 		{
@@ -60,19 +64,16 @@
 		}
 		function changeIFrame()
 		{
-			x.src = urlMap[this.id];
+			var url = urlMap[this.id];
+			if(url!=undefined)
+				x.src = url;
 		}
 	</script>
 </head>
 <body>
 	<div class="container">
-		<div class="row">
-			<div class="col-xs-8">
-				<img src="resource/logo.jpg" alt="Bill Gates" style="float:left" width="100" height="100"/><h1 class="text-default">X64ARM</h1>
-				<small>为什么我要做这么简单的网站？ - 因为我想回归需求的本质</small>
-				<div><span class="label label-danger">技术宅</span><span class="label label-primary">美剧控</span><span class="label label-success">强迫症</span><span class="label label-info">段子刷</span><span class="label label-warning">美图党</span></div>
-			</div>
-			<div class="col-xs-4">
+		<div class="col-xs-12">
+			<div style="float:right">
 				<form method=get action="http://209.116.186.231/search?q=%s" target="_blank"> 
 					<input type=text name=q> 
 					<input type=hidden value=GB2312> 
@@ -86,8 +87,12 @@
 					</p>
 				</form>
 			</div>
+			<div>
+				<img src="resource/logo.jpg" alt="Bill Gates" style="float:left" width="100" height="100"/><h1 class="text-default">X64ARM</h1><small>为什么我要做这么简单的网站？ - 因为我想回归需求的本质</small>
+			</div>
+			<div style="float:left"><span class="label label-danger">技术宅</span><span class="label label-primary">美剧控</span><span class="label label-success">强迫症</span><span class="label label-info">段子刷</span><span class="label label-warning">美图党</span>
+			</div>
 		</div>
-		<br/>
 		<div>
 			<span class="label label-warning">X64ARM QQ群：255627765</span>
 			<span class="label label-info">有道云协作群：<a href="http://163.fm/B8MEEwY" target="_blank">4095715</a></span>
@@ -123,8 +128,5 @@
 			<iframe id="main" width="100%" height="10000" frameborder="0" scrolling="yes"></iframe>
 		</div>
 	</div>
-
-	<!-- 包括所有已编译的插件 -->
-	<script src="bootstrap/js/bootstrap.js"></script>
 </body>
 </html> 
