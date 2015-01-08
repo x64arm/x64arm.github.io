@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>X64ARM - 一个内容众筹的网站</title>
+	<title>X64ARM</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
-	<meta name="description" content="X64ARM是一个内容众筹的网站">
+	<meta name="description" content="X64ARM">
 	<meta name="author" content="Liu Xin">
 	<meta name="qq" content="276829513">
 	<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -40,12 +40,9 @@
 				"ProgrammingTools":"http://note.youdao.com/share/?id=345c6204f8a64a57284684e1d278f534&type=note",
 				"IconResource":"http://note.youdao.com/share/?id=74f5928da15b29bfb0f732114409b725&type=note",
 				"Funny":"http://note.youdao.com/share/?id=9223f835746db718295dd16f5d8934ba&type=notebook",
-				"Fuli":"http://note.youdao.com/share/?id=9defac1dfb8ca275766465f88298d8fe&type=notebook",
 				"Science":"http://note.youdao.com/share/?id=fe8b4964ff21d5f74c73bcbf7d5f8bbc&type=notebook",
-				"Yuntian":"http://note.youdao.com/share/?id=653711fb4cd906c62b30044e9c3c555a&type=note",
 				"TeamBlog":"http://note.youdao.com/share/?id=93f7dc32f817d8c9d794affcd1d2457b&type=note",
 				"Github":"http://note.youdao.com/share/?id=a0f3bcb76c276ddf3fa60ab98c5a85bd&type=note",
-				"News2014":"http://note.youdao.com/share/?id=44ed393c956c35695ff3a23d1beda661&type=notebook",
 				"MyProject":"Projects.html",
 				"MyRead":"http://note.youdao.com/share/?id=dc12509249d3aa628cf40c1c72d437b9&type=notebook"
 			};
@@ -53,7 +50,7 @@
 			var btn = document.getElementsByTagName("button");
 			addClick(btn);
 
-			var url = urlMap[btn[0].id];
+			var url = urlMap["IndexHTML"];
 			if(url!=undefined)
 				x.src = url;
 		}
@@ -73,30 +70,36 @@
 </head>
 <body>
 	<div class="container">
-		<div class="col-xs-12">
-			<div style="float:right">
-				<form method=get action="http://209.116.186.231/search?q=%s" target="_blank"> 
-					<input type=text name=q> 
-					<input type=hidden value=GB2312> 
-					<input type=hidden name=hl value=zh-CN> 
-					<input type=submit name=btn value="Google搜索"> 
-				</form> 
-				<form class="gh-search" id="search" method="get" action="http://www.guokr.com/search/all/"  target="_blank">
-					<p id="searchBox">
-						<input id="searchTxt" class="gh-search-txt" type="text" name="wd" maxlength="30" value="">
-						<input class="gnicon-search" type="submit" value="果壳搜索">
-					</p>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+					<span class="sr-only"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="http://www.x64arm.com">X64ARM</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<form class="navbar-form navbar-right" action="http://209.116.186.219/search?q=%s" target="_blank"> 
+					<div class="form-group">
+						<input type=text name=q class="form-control"> 
+						<input type=hidden value=GB2312> 
+						<input type=hidden name=hl value=zh-CN> 
+					</div>
+					<button type="submit" class="btn btn-success">Google搜索</button>
 				</form>
-			</div>
+			</div><!--/.navbar-collapse -->
+		</nav>
+		<div class="col-xs-12" style="margin:20px;">
 			<div>
-				<img src="resource/logo.jpg" alt="Bill Gates" style="float:left" width="100" height="100"/><h1 class="text-default">X64ARM</h1><small>为什么我要做这么简单的网站？ - 因为我想回归需求的本质</small>
+				<img src="resource/logo.jpg" alt="Bill Gates" style="float:left" width="100" height="100"/><h1 class="text-default">X64ARM</h1><small>X64ARM</small>
 			</div>
-			<div style="float:left"><span class="label label-danger">技术宅</span><span class="label label-primary">美剧控</span><span class="label label-success">强迫症</span><span class="label label-info">段子刷</span><span class="label label-warning">美图党</span>
+			<div style="float:left"><span class="label label-danger">技术宅</span><span class="label label-primary">代码控</span>
 			</div>
 		</div>
 		<div>
 			<span class="label label-warning">X64ARM QQ群：255627765</span>
-			<span class="label label-info">有道云协作群：<a href="http://163.fm/B8MEEwY" target="_blank">4095715</a></span>
 			<span class="label"><a href="http://mynameisawei.taobao.com" target="_blank">春日部男装</a></span>
 			<span class="label"><a href="http://www.fofalife.com/" target="_blank">佛法人生</a></span>
 			<span class="label"><a href="http://www.x86asm.com" target="_blank">猪头三</a></span>
@@ -109,23 +112,21 @@
 		</div>
 		<br/>
 		<div class="btn-group" role="group" aria-label="...">
-			<button type="button" class="btn btn-info" id="IndexHTML">首页</button>
-			<button type="button" class="btn btn-danger" id="MyNote" title="这都是我的真知灼见">我的笔记</button>
-			<button type="button" class="btn btn-warning" id="ProgrammingLanguages">编程语言</button>
-			<button type="button" class="btn btn-warning" id="OtherDocs">其他文档</button>
-			<button type="button" class="btn btn-warning" id="Software">软件下载</button>
-			<button type="button" class="btn btn-warning" id="ProgrammingTools">编程工具</button>
-			<button type="button" class="btn btn-warning" id="IconResource">图标资源</button>
-			<button type="button" class="btn btn-primary" id="Funny">搞笑系列</button>
-			<button type="button" class="btn btn-danger" id="Fuli" title="由福利社达人倾情奉献">福利社</button>
-			<button type="button" class="btn btn-success" id="Science">科学区</button>
-			<button type="button" class="btn btn-danger" id="Yuntian" title="由影视达人慷慨解囊">云天影视</button>
-			<button type="button" class="btn btn-warning" id="TeamBlog">团队博客</button>
-			<button type="button" class="btn btn-warning" id="News2014" title="内容较多，打开会有点小慢">2014新闻</button>
-			<button type="button" class="btn btn-info" id="MyProject">我的项目</button>
+			<button type="button" class="btn btn-info btn-xs" id="IndexHTML">首页</button>
+			<button type="button" class="btn btn-danger btn-xs" id="MyNote" title="欢迎贡献笔记">我的笔记</button>
+			<button type="button" class="btn btn-danger btn-xs" id="MyRead" title="欢迎分享读书">读书笔记</button>
+			<button type="button" class="btn btn-warning btn-xs" id="ProgrammingLanguages">编程语言</button>
+			<button type="button" class="btn btn-warning btn-xs" id="OtherDocs">其他文档</button>
+			<button type="button" class="btn btn-warning btn-xs" id="Software">软件下载</button>
+			<button type="button" class="btn btn-warning btn-xs" id="ProgrammingTools">编程工具</button>
+			<button type="button" class="btn btn-warning btn-xs" id="IconResource">图标资源</button>
+			<button type="button" class="btn btn-primary btn-xs" id="Funny">搞笑系列</button>
+			<button type="button" class="btn btn-success btn-xs" id="Science">科学区</button>
+			<button type="button" class="btn btn-warning btn-xs" id="TeamBlog">团队博客</button>
+			<button type="button" class="btn btn-info btn-xs" id="MyProject">我的项目</button>
 		</div>
 		<div class="btn-group" role="group" aria-label="...">
-			<button type="button" class="btn btn-danger" id="MyRead" title="看后终有所思">读书笔记</button>
+			
 		</div>
 	</div>
 	<div align="center" style="margin:0 auto;overflow:hidden">
